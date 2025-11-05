@@ -12,86 +12,127 @@
   <meta property="og:type" content="website" />
 
   <style>
+    :root{
+      --blue-emboss: #e6f3ff;
+      --accent-blue: #003b6f;
+      --cta-red: #cc0000;
+    }
+
+    html,body{height:100%;}
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #ffffff;
-      text-align: center;
+      padding: 0 12px 40px;
+      background: #fff;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      color:#222;
     }
 
-    .top-image-container {
-      width: 100%;
-      margin-top: 20px;
+    .page-wrap{
+      width:100%;
+      max-width:720px;
+      margin-top:18px;
+      text-align:center;
     }
 
-    .circle-img {
-      width: 75%;
-      max-width: 350px;
-      aspect-ratio: 1/1;
+    /* red bubbling dropped background behind the image */
+    .hero-bg{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:24px 0 8px;
+      background: radial-gradient( circle at 10% 20%, rgba(255,90,90,0.18), transparent 12% ),
+                  radial-gradient( circle at 80% 40%, rgba(255,40,40,0.12), transparent 10% ),
+                  radial-gradient( circle at 50% 80%, rgba(255,10,10,0.08), transparent 8% ),
+                  linear-gradient(180deg, rgba(255,240,240,1), white 60%);
+      border-radius:14px;
+      box-shadow: 0 6px 18px rgba(204,0,0,0.06);
+    }
+
+    /* square crop, 75% wide */
+    .thumb{
+      width:75%;
+      max-width:420px;
+      aspect-ratio: 1 / 1; /* forces square */
       object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+      display:block;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      border: 6px solid rgba(255,255,255,0.6);
     }
 
-    .title-box {
-      background: #e7f3ff;
-      padding: 15px;
-      margin: 25px auto;
-      width: 85%;
-      border-radius: 10px;
-      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+    .title-box{
+      background: var(--blue-emboss);
+      padding:16px 18px;
+      margin:18px auto 6px;
+      width:92%;
+      border-radius:10px;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.85);
     }
 
-    h1 {
-      font-size: 22px;
-      margin: 0;
-      color: #003b6f;
-      font-weight: bold;
+    h1{
+      margin:0;
+      font-size:20px;
+      color:var(--accent-blue);
+      font-weight:700;
+      letter-spacing:0.2px;
     }
 
-    .subtitle {
-      font-size: 14px;
-      margin-top: 5px;
-      color: #444;
+    .subtitle{
+      margin-top:8px;
+      font-size:13px;
+      color:#444;
+      line-height:1.35;
     }
 
-    .start-btn {
-      display: inline-block;
-      margin-top: 30px;
-      background: #cc0000;
-      color: white;
-      padding: 14px 28px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    .cta-row{
+      margin-top:20px;
     }
 
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: red;
+    .start-btn{
+      display:inline-block;
+      background:var(--cta-red);
+      color:#fff;
+      padding:14px 28px;
+      font-size:16px;
+      font-weight:700;
+      text-decoration:none;
+      border-radius:8px;
+      box-shadow: 0 6px 16px rgba(204,0,0,0.25);
+      letter-spacing:0.6px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .start-btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(204,0,0,0.32);}
+
+    footer{
+      margin-top:28px;
+      font-size:14px;
+      color:var(--cta-red);
+    }
+
+    /* responsive tweaks */
+    @media (max-width:480px){
+      .thumb{width:86%;}
+      h1{font-size:18px}
+      .start-btn{padding:12px 20px;font-size:15px}
     }
   </style>
-
 </head>
 <body>
-  <div class="top-image-container">
-    <img class="circle-img" src="https://raw.githubusercontent.com/gyoutrain-lab/nursing-prometric-test-simulation1/main/icon17%20(1).jpg" alt="Prometric Icon" />
-  </div>
+  <div class="page-wrap">
+    <div class="hero-bg">
+      <img class="thumb" src="https://raw.githubusercontent.com/gyoutrain-lab/nursing-prometric-test-simulation1/main/icon17%20(1).jpg" alt="Simulation Icon" />
+    </div>
 
-  <div class="title-box">
-    <h1>Fundamental Nursing Prometric Simulation Test</h1>
-    <div class="subtitle">Adapted from Prometric/SMLE and ENCLEX based materials</div>
-    <div class="subtitle">Just make your own way to get a better career in nursing for the Nurse Technician Certificate</div>
-  </div>
+    <div class="title-box">
+      <h1>Fundamental Nursing Prometric Simulation Test</h1>
+      <div class="subtitle">Adapted from Prometric/SMLE and ENCLEX based materials</div>
+      <div class="subtitle">Just make your own way to get a better career in nursing for the Nurse Technician Certificate</div>
+    </div>
 
-  <a class="start-btn" href="https://script.google.com/macros/s/AKfycbyCTJ6qVtUSC1_vkoEWocsNpQv17NCE7Fvse9004DZF5VzyygAJw5l_1CQO5emJ88AjoA/exec">Start the Test</a>
-
-  <footer>
-    Prepared by: Giyono Asfarrasyid, ETK Yogyakarta
-  </footer>
-</body>
-</html>
+    <div class="cta-row">
+      <a class=
